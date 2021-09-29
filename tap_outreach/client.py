@@ -17,6 +17,8 @@ class Server5xxError(Exception):
 class RateLimitError(Exception):
     pass
 
+class RefreshTokenError(Exception):
+    pass
 
 class OutreachClient(object):
     BASE_URL = 'https://api.outreach.io/api/v2/'
@@ -55,7 +57,7 @@ class OutreachClient(object):
 
         self.__expires_at = datetime.utcnow() + \
             timedelta(seconds=data['expires_in'] -
-                      10)  # pad by 10 seconds for clock drift
+                      200)  # pad by 200 seconds for clock drift
 
     def sleep_for_reset_period(self, response):
         reset = datetime.fromtimestamp(
@@ -66,8 +68,14 @@ class OutreachClient(object):
             'Sleeping for {:.2f} seconds for next rate limit window'.format(sleep_time))
         time.sleep(sleep_time)
 
+    def sleep_for_token_refresh(self):
+        sleep_time = 10
+        LOGGER.warn(
+            'Sleeping for {:.2f} seconds to refresh token'.format(sleep_time))
+        time.sleep(sleep_time)
+
     @backoff.on_exception(backoff.expo,
-                          (Server5xxError, RateLimitError, ConnectionError),
+                          (Server5xxError, RateLimitError, RefreshTokenError, ConnectionError),
                           max_tries=5,
                           factor=3)
     # Rate Limit: https://api.outreach.io/api/v2/docs#rate-limiting
@@ -107,6 +115,12 @@ class OutreachClient(object):
             LOGGER.warn('Rate limit hit - 429')
             self.sleep_for_reset_period(response)
             raise RateLimitError()
+
+        if response.status_code == 401:
+            LOGGER.warn('Unauthorized for URL, attempt to force refresh token - 401')
+            self.refresh()
+            self.sleep_for_token_refresh()
+            raise RefreshTokenError()
 
         response.raise_for_status()
 

@@ -459,14 +459,8 @@
     "emails": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "string"
-        ]
-      }
+        "string"
+      ]
     },
     "emailsOptStatus": {
       "type": [
@@ -613,14 +607,8 @@
     "mobilePhones": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "string"
-        ]
-      }
+        "string"
+      ]
     },
     "name": {
       "type": [
@@ -662,14 +650,8 @@
     "otherPhones": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "string"
-        ]
-      }
+        "string"
+      ]
     },
     "personalNote1": {
       "type": [
@@ -765,14 +747,8 @@
     "tags": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "string"
-        ]
-      }
+        "string"
+      ]
     },
     "timeZone": {
       "type": [
@@ -827,14 +803,8 @@
     "voipPhones": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "string"
-        ]
-      }
+        "string"
+      ]
     },
     "websiteUrl1": {
       "type": [
@@ -857,14 +827,8 @@
     "workPhones": {
       "type": [
         "null",
-        "array"
-      ],
-      "items": {
-        "type": [
-          "null",
-          "string"
-        ]
-      }
+        "string"
+      ]
     },
     "accountId": {
       "type": [

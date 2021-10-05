@@ -53,6 +53,8 @@ class OutreachClient(object):
                 'grant_type': 'refresh_token'
             })
 
+        self.__refresh_token = data["refresh_token"]
+
         self.__access_token = data['access_token']
 
         self.__expires_at = datetime.utcnow() + \

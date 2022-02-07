@@ -216,7 +216,7 @@ def process_records(stream, mdata, max_modified, records, filter_field, fks):
             if 'relationships' in record:
                 for prop, value in record['relationships'].items():
                     if 'data' not in value and 'links' not in value:
-                        if value == True
+                        if value == True:
                             raise Exception(
                                 'Only `data` or `links` expected in relationships, value is {}'.format(value))
 

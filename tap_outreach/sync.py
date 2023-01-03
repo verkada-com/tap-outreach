@@ -229,8 +229,9 @@ def process_records(stream, mdata, max_modified, records, filter_field, fks):
                                 'null or `id` field expected for `data` relationship')
 
                         if fk_field_name in record_flat:
-                            raise Exception(
-                                '`{}` exists as both an attribute and generated relationship name, record_flat: {}, fk_field_name: {}'.format(fk_field_name, record_flat, fk_field_name))
+                            if fk_field_name != 'updaterId': # TODO: hack fix for updaterId issue
+                                raise Exception(
+                                    '`{}` exists as both an attribute and generated relationship name'.format(fk_field_name))
 
                         if data_value == None:
                             record_flat[fk_field_name] = None

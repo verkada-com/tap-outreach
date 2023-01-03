@@ -865,6 +865,12 @@
         "null",
         "integer"
       ]
+    },
+    "updaterId": {
+      "type": [
+        "null",
+        "integer"
+      ]
     }
   }
 } 

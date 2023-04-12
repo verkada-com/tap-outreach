@@ -7,13 +7,6 @@
         "integer"
       ]
     },
-    "addedAt": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "format": "date-time"
-    },
     "addressCity": {
       "type": [
         "null",

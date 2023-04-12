@@ -11,7 +11,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "addressCity": {
       "type": [

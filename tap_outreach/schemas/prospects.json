@@ -10,7 +10,6 @@
     "addedAt": {
       "type": [
         "null",
-        "object",
         "string"
       ]
     },

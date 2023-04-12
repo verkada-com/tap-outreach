@@ -9,7 +9,9 @@
     },
     "addedAt": {
       "type": [
-        "null"
+        "null",
+        "object",
+        "string"
       ]
     },
     "addressCity": {

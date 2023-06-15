@@ -793,6 +793,13 @@
       ],
       "format": "date-time"
     },
+    "trashedAt": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
     "voipPhones": {
       "type": [
         "null",

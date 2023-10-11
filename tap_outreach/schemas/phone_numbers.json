@@ -1,0 +1,80 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": [
+          "integer"
+        ]
+      },
+      "countryCode": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "extension": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "number": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "order": {
+        "type": [
+          "null",
+          "integer"
+        ]
+      },
+      "phoneType": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "rawNumber": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "status": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "statusChangedAt": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "format": "date-time"
+      },
+      "createdAt": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "format": "date-time"
+      },
+      "updatedAt": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "format": "date-time"
+      },
+      "prospectId": {
+        "type": [
+          "null",
+          "integer"
+        ]
+      }
+    }
+  }

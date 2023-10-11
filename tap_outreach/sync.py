@@ -97,6 +97,12 @@ STREAM_CONFIGS = {
         'replication': 'incremental',
         'filter_field': 'updatedAt'
     },
+    'phone_numbers': {
+        'url_path': 'phoneNumbers',
+        'replication': 'incremental',
+        'filter_field': 'updatedAt',
+        'fks': ['prospectId']
+    },
     'prospects': {
         'url_path': 'prospects',
         'replication': 'incremental',
@@ -167,6 +173,12 @@ STREAM_CONFIGS = {
         'url_path': 'teams',
         'replication': 'full',
         'fks': ['creatorId', 'updaterId']
+    },
+    'templates': {
+        'url_path': 'templates',
+        'replication': 'incremental',
+        'filter_field': 'updatedAt',
+        'fks': ['creatorId', 'ownerId', 'updaterId']
     },
     'users': {
         'url_path': 'users',
